@@ -3,7 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Yonmoku: 3D Four in a Row</title>
+<title>Yonmoku: 3D Four in a Row for iPhone and iPad</title>
+<meta name="description" content="Yonmoku is 3D four in a row for iPhone and iPad. Drop beads on sixteen pegs and line up four across, up or through the cube. Play a friend, the AI or a puzzle.">
+<link rel="canonical" href="https://jjfisherdev.github.io/yonmoku-site/">
+<meta name="apple-itunes-app" content="app-id=6821935069">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Yonmoku: 3D Four in a Row">
+<meta property="og:title" content="Yonmoku: 3D Four in a Row">
+<meta property="og:description" content="Four in a row, in three dimensions. Two people on one iPhone or iPad, or you against the AI, and a new puzzle every day. Plays offline.">
+<meta property="og:url" content="https://jjfisherdev.github.io/yonmoku-site/">
+<meta property="og:image" content="https://jjfisherdev.github.io/yonmoku-site/img/card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Yonmoku board on a low table: sixteen wooden pegs, with four red beads lit along a winning line through the cube.">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 :root { color-scheme: light; }
 body { margin: 0; background: #F7F2E8; color: #3B3632; font: 17px/1.6 Georgia, "Hiragino Mincho ProN", "Yu Mincho", "Times New Roman", serif; }
@@ -15,13 +28,124 @@ a { color: #B4472F; }
 nav { font-size: 15px; color: #7A716A; margin-bottom: 32px; }
 nav a { margin-right: 16px; }
 footer { margin-top: 48px; font-size: 14px; color: #7A716A; }
+
+.app { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.app img { width: 72px; height: 72px; border-radius: 16px; flex: none; }
+.app h1 { margin: 0; }
+.get { display: inline-block; background: #B4472F; color: #F7F2E8; text-decoration: none; padding: 12px 24px; border-radius: 999px; }
+.get:hover, .get:focus { background: #9C3C27; }
+.facts { font-size: 15px; color: #7A716A; }
+h2 { font-weight: normal; font-size: 23px; line-height: 1.3; margin: 40px 0 12px; }
+h3 { font-size: 17px; margin: 24px 0 4px; }
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 16px; }
+.shots img { display: block; width: 100%; height: auto; border-radius: 12px; }
+@media (max-width: 520px) {
+  .shots { grid-template-columns: repeat(3, 68%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+  .shots img { scroll-snap-align: start; }
+}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "MobileApplication",
+        "VideoGame"
+      ],
+      "@id": "https://jjfisherdev.github.io/yonmoku-site/#app",
+      "name": "Yonmoku: 3D Four in a Row",
+      "alternateName": "Yonmoku",
+      "description": "A 3D four-in-a-row board game for iPhone and iPad. Sixteen pegs on a 4x4 board take 4 beads each, a 4x4x4 cube; beads drop and stack, and four in a line wins across, up or through the cube, 76 lines in all. Two people share one device, or one plays against an AI; a new puzzle every day. Free, with occasional non-personalized ads between games; no account, nothing to buy, plays offline.",
+      "url": "https://jjfisherdev.github.io/yonmoku-site/",
+      "installUrl": "https://apps.apple.com/us/app/yonmoku-3d-four-in-a-row/id6821935069",
+      "sameAs": [
+        "https://apps.apple.com/us/app/yonmoku-3d-four-in-a-row/id6821935069"
+      ],
+      "image": "https://jjfisherdev.github.io/yonmoku-site/img/icon-512.jpg",
+      "screenshot": [
+        "https://jjfisherdev.github.io/yonmoku-site/img/01-win.jpg",
+        "https://jjfisherdev.github.io/yonmoku-site/img/02-ai.jpg",
+        "https://jjfisherdev.github.io/yonmoku-site/img/03-puzzle.jpg"
+      ],
+      "operatingSystem": "iOS 15.0 or later",
+      "applicationCategory": "GameApplication",
+      "applicationSubCategory": "Board",
+      "genre": [
+        "Board game",
+        "Strategy",
+        "Puzzle"
+      ],
+      "gamePlatform": [
+        "iPhone",
+        "iPad"
+      ],
+      "playMode": [
+        "SinglePlayer",
+        "MultiPlayer"
+      ],
+      "numberOfPlayers": {
+        "@type": "QuantitativeValue",
+        "minValue": 1,
+        "maxValue": 2
+      },
+      "inLanguage": "en",
+      "contentRating": "4+",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@id": "https://jjfisherdev.github.io/#org"
+      },
+      "author": {
+        "@id": "https://jjfisherdev.github.io/#org"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://jjfisherdev.github.io/#org",
+      "name": "JJ Fisher LLC",
+      "url": "https://jjfisherdev.github.io/"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <main>
 <nav><a href="index.html">Yonmoku</a><a href="support.html">Support</a><a href="privacy.html">Privacy policy</a></nav>
+<header class="app">
+<img src="img/icon-512.jpg" width="512" height="512" alt="The Yonmoku app icon: a wooden board of sixteen pegs with four red beads rising through it">
 <h1>Yonmoku: 3D Four in a Row<small>A quiet board game for two, by JJ Fisher LLC</small></h1>
-<p>Four in a row, in three dimensions. Two people and one phone, or you against the AI, at a low table in a ryokan at dusk. A puzzle every day. Hold a peg, let go, pass it across. No account, nothing to buy.</p><p><a href="support.html">Support</a> &middot; <a href="privacy.html">Privacy policy</a></p>
+</header>
+<p><a class="get" href="https://apps.apple.com/us/app/yonmoku-3d-four-in-a-row/id6821935069">Get Yonmoku free on the App Store</a></p>
+<p class="facts">Free, with ads between games &middot; iPhone and iPad &middot; iOS 15 or later &middot; Ages 4+</p>
+<section class="about">
+<p>Yonmoku is four in a row in three dimensions. Sixteen pegs stand on a board of pale hinoki wood, four beads to a peg: a 4x4x4 cube. Players take turns dropping a bead onto any peg, where it stacks on the beads below. Four of your beads in a straight line wins: along a level, up a peg, or on any diagonal, flat, rising or through the cube. That is 76 lines to watch at once, like 3D tic-tac-toe with gravity.</p>
+<p>Two people can pass one iPhone or iPad back and forth, or you can play the AI, which grows a little keener when you win and gentler when you lose. A new puzzle waits every day: a win to force in three, four or five beads. There is no account and nothing to buy, and it plays offline. The room is a ryokan from dusk into night: a garden, running water, and the wooden tock of a bead landing.</p>
+</section>
+<h2>See it</h2>
+<div class="shots">
+<img src="img/01-win.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="Tic-tac-toe in 3D, with gravity: four red beads climb a diagonal through the cube on the sixteen pegs, the beads under them translucent, with Replay&#x27;s bar at the top at bead 13 of 13.">
+<img src="img/02-ai.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="A friend, or the AI: the AI&#x27;s light bead hovers above a peg on the board while the label reads The AI considers.">
+<img src="img/03-puzzle.jpg" width="600" height="1304" loading="lazy" decoding="async" alt="A new puzzle every day: the day&#x27;s position of dark and light beads stacked on the sixteen pegs, marked Win in 4.">
+</div>
+<h2>Questions people ask</h2>
+<h3>Is Yonmoku free?</h3>
+<p>Yes, and there is nothing to buy. Between games it sometimes shows a full-screen ad: the first after your second or third game, then one every two or three games, never two within three minutes. There is never an ad during a game or in the daily puzzle. The ads are not personalized, and Yonmoku never asks to track you. Where privacy law asks for it, Google&#x27;s consent form comes first and Ad privacy choices sits in Settings, and where Apple&#x27;s age check applies, ads for a younger player wait until a parent approves.</p>
+<h3>Can two people play on one iPhone or iPad?</h3>
+<p>Yes, that is what Yonmoku was made for. Two players share one iPhone or iPad and pass it across, a bead each. At every handoff the camera eases back to the same home angle, so the last view gives nothing away. Play a single game or a best of 3 or 5; in a series, the loser of each game starts the next.</p>
+<h3>Can I play alone?</h3>
+<p>Yes, two ways. Choose vs. AI and the AI sits across the table: it shows where it will play, then drops its bead, and it grows a little keener when you win and a little gentler when you lose. Or open the daily puzzle: one position a day where you can force a win in three, four or five beads, gentlest on Monday and hardest on Sunday, with no timer and no streak.</p>
+<h3>Does Yonmoku need an internet connection?</h3>
+<p>No. Two-player games, the AI and every daily puzzle are inside the app, so it plays on a plane or a train. Ads load over the internet; offline, no new ad loads and the game never waits for one. If you use iCloud, your record, solved puzzles, the AI&#x27;s level and achievements reach your other devices once you are back online.</p>
+<h3>Which devices can play Yonmoku?</h3>
+<p>iPhone and iPad with iOS 15 or later (iPadOS 15 or later on iPad), in portrait and in English. There is no Android version.</p>
+<h2>An evening at the table</h2>
+<p><a class="get" href="https://apps.apple.com/us/app/yonmoku-3d-four-in-a-row/id6821935069">Get Yonmoku free on the App Store</a></p>
+<p><a href="support.html">Support</a> &middot; <a href="privacy.html">Privacy policy</a></p>
 <footer>JJ Fisher LLC</footer>
 </main>
 </body>
